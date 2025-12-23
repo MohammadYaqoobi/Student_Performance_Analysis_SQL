@@ -3,8 +3,8 @@
 | Attribute | Details |
 |-----------|---------|
 | **File** | `student_mat.csv` |
-| **Source** | [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/student+performance) |
-| **Citation** | P. Cortez and A. Silva. Using Data Mining to Predict Secondary School Student Performance. 2008 |
+| **Source** | [Kaggle - Student Alcohol Consumption](https://www.kaggle.com/datasets/uciml/student-alcohol-consumption) |
+| **Original Source** | UCI Machine Learning Repository |
 | **Records** | 395 students |
 | **Features** | 33 attributes |
 
