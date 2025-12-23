@@ -157,7 +157,7 @@ As an Educational Management graduate, I bring **domain expertise** that transfo
 **Mohammad Yaqoobi**
 Data Analytics Student | Background in Educational Management
 
-[LinkedIn](https://www.linkedin.com/in/mohammad-yaqoobi/) • [Email](mohammad.yaqoobi143@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/mohammad-yaqoobi/) • [Email](mailto:mohammad.yaqoobi143@gmail.com)
 
 ---
 
