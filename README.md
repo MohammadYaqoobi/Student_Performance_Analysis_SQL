@@ -17,7 +17,7 @@ Unlike generic SQL exercises, each query answers a specific question that school
 
 | Attribute | Details |
 |-----------|---------|
-| **Source** | [UCI ML Repository - Student Performance](https://archive.ics.uci.edu/ml/datasets/student+performance) |
+| **Source** | [Kaggle - Student Alcohol Consumption](https://www.kaggle.com/datasets/uciml/student-alcohol-consumption) |
 | **Records** | 395 students |
 | **Features** | 33 attributes |
 | **Context** | Portuguese secondary school (Math course) |
