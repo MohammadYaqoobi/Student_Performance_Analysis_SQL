@@ -1,164 +1,75 @@
-# 📊 Educational Data Analytics: Student Performance Analysis
+# Student Performance Strategy: From Data to Policy
 
-## 🎯 About This Project
+## 📋 Project Overview
 
-This project demonstrates how **Educational Management** combined with **Data Analytics skills** can inform school policy decisions.
+This project bridges the gap between **Educational Management theory** and **Data Analytics**. Using a dataset of student performance, I built an end-to-end analysis pipeline (SQL + Power BI) to answer a critical question: **Where should a school invest its limited budget to improve student outcomes?**
 
-Unlike generic SQL exercises, each query answers a specific question that school administrators and policymakers actually face.
+Unlike standard data projects that focus only on "what happened," this analysis focuses on **"why it matters"** and **"what to do next."**
 
-| My Background | Applied In This Project |
-|---------------|------------------------|
-| Educational Management (B.A.) | Framing the right questions |
-| Data Analysis (SQL) | Extracting insights from data |
-
----
-
-## 📈 Dataset
-
-| Attribute | Details |
-|-----------|---------|
-| **Source** | [Kaggle - Student Alcohol Consumption](https://www.kaggle.com/datasets/uciml/student-alcohol-consumption) |
-| **Records** | 395 students |
-| **Features** | 33 attributes |
-| **Context** | Portuguese secondary school (Math course) |
-| **Variables** | Demographics, family background, study habits, grades |
+### 👤 Author's Background
+*   **Domain Expertise:** B.A. in Educational Management (Applied Bourdieu’s Cultural Capital theory & Equity frameworks).
+*   **Technical Skills:** SQL (for data extraction & logic), Power BI (for visualization & storytelling).
 
 ---
 
-## 🔬 Research Questions & Findings
+## 📊 The Interactive Dashboard
 
-### 1. Cultural Capital Analysis
-📁 `sql/01_cultural_capital_analysis.sql`
+I translated the raw SQL insights into a 4-page interactive report to help school administrators make data-driven decisions.
 
-> **Theory:** Bourdieu's Cultural Capital - parental education transmits academic advantages to children.
+*(Note: The actual .pbix file is included in this repository).*
 
-| Parental Education | Students | Avg Grade | Higher Ed Aspiration |
-|--------------------|----------|-----------|---------------------|
-| Both Higher Education | 166 | 11.08 | 99.4% |
-| One Parent Higher Ed | 94 | 11.04 | 92.6% |
-| Basic Education | 131 | 9.02 | 91.6% |
+### 1. Executive Overview
+A high-level view of the school's health, showing performance distribution across gender and schools (GP vs. MS).
+![Overview Dashboard]([images/Overview.png])
 
-**📌 Finding:** Students with higher-educated parents score **2 points higher** (11.08 vs 9.02) and show significantly stronger aspirations for higher education (99.4% vs 91.6%). This confirms Bourdieu's theory: cultural capital is transmitted across generations.
+### 2. Equity Analysis (Cultural Capital)
+Here, I tested Bourdieu's theory. The data confirms a sharp divide: Students with higher-educated parents score **+2.0 points** higher on average.
+*(Note: Groups with statistically insignificant sample sizes, like 'Minimal Education', were excluded to ensure accuracy).*
+![Equity Dashboard]([images/Equity Analysis.png])
 
-**🎯 Recommendation:** Schools should provide additional academic counseling and mentorship programs for first-generation students whose parents lack higher education.
+### 3. ROI Analysis (The Most Critical Finding)
+This page answers the budget question. The data reveals that **paid tutoring alone is ineffective (-0.23 growth)** for struggling students, whereas **free school support** yields the highest return (+0.65 growth).
+![ROI Dashboard]([images/RIO.png])
 
----
-
-### 2. Gender Gap Analysis
-📁 `sql/02_gender_gap_analysis.sql`
-
-> **Policy Question:** Do we have gender equity in educational outcomes?
-
-| Gender | Support | Students | Avg Grade | Improvement |
-|--------|---------|----------|-----------|-------------|
-| Male | No | 172 | 11.06 | -0.34 |
-| Male | Yes | 15 | 9.27 | 0.00 |
-| Female | No | 172 | 10.06 | -0.90 |
-| Female | Yes | 36 | 9.50 | +0.50 |
-
-**📌 Finding:** Males outperform females by **1 full grade point** on average (11.06 vs 10.06). However, females respond better to school support programs, showing **+0.50 improvement** compared to 0.00 for males. This suggests support programs are more effective for female students.
-
-**🎯 Recommendation:** Investigate root causes of the gender gap. Consider expanding support programs as females show higher responsiveness to intervention.
+### 4. Early Warning System
+An operational tool for counselors to identify at-risk students before they fail, based on a custom risk formula calculated in SQL.
+![Warning System Dashboard]([images/Early Warning System.png])
 
 ---
 
-### 3. School Performance Comparison
-📁 `sql/03_school_comparison.sql`
+## 🛠️ Technical Implementation
 
-> **Management Question:** Which school performs better and why?
+### Data Source
+*   **Dataset:** Student Performance Data (Math Course).
+*   **Volume:** 395 Records, 33 Attributes.
+*   **Tools:** PostgreSQL, Power BI Desktop.
 
-| School | Mother Education | Students | Avg Grade |
-|--------|------------------|----------|-----------|
-| MS | Higher Educated | 22 | 11.64 |
-| GP | Higher Educated | 208 | 11.08 |
-| GP | Non-Higher Educated | 141 | 9.62 |
-| MS | Non-Higher Educated | 24 | 8.21 |
+### SQL Logic & Key Findings
+I wrote 5 specific queries to extract these insights. You can find the raw `.sql` files in the `sql/` folder.
 
-**📌 Finding:** When controlling for parental education, **MS school shows higher peaks but also deeper valleys**. The gap between advantaged and disadvantaged students is 3.43 points at MS versus only 1.46 points at GP. This suggests GP is more equitable, while MS amplifies existing inequalities.
-
-**🎯 Recommendation:** MS school should investigate why disadvantaged students underperform so significantly and adopt equity-focused practices from GP.
-
----
-
-### 4. Support Systems ROI
-📁 `sql/04_support_systems_roi.sql`
-
-> **Budget Question:** Are support programs worth the investment for struggling students?
-
-| School Support | Paid Tutoring | Students | Start Grade | Final Grade | Improvement |
-|----------------|---------------|----------|-------------|-------------|-------------|
-| ✅ Yes | ❌ No | 17 | 7.29 | 7.94 | **+0.65** |
-| ✅ Yes | ✅ Yes | 11 | 7.36 | 8.00 | **+0.64** |
-| ❌ No | ✅ Yes | 48 | 7.79 | 7.56 | -0.23 |
-| ❌ No | ❌ No | 66 | 7.17 | 5.17 | **-2.00** |
-
-**📌 Finding:** This is the most critical insight. **School support alone improves grades (+0.65)**, but **paid tutoring without school support actually hurts performance (-0.23)**. Students with no support at all experience a dramatic **2-point decline**. Adding paid tutoring to school support provides no additional benefit (+0.64 ≈ +0.65).
-
-**🎯 Recommendation:** Prioritize expanding free school support programs over encouraging paid tutoring. The data shows school support is effective and paid tutoring alone may create a false sense of security without addressing underlying issues.
+| Analysis | Key Insight | Recommendation |
+|:---|:---|:---|
+| **1. Cultural Capital** | Parental education is the strongest predictor of grades. There is a **2-point gap** between students with educated parents vs. those without. | Launch mentorship programs specifically for first-generation students. |
+| **2. Gender Gap** | While boys score slightly higher on average, **girls respond significantly better (+0.50)** to school support programs. | Expand support program slots for female students to maximize impact. |
+| **3. School Equity** | **GP School** maintains consistent performance, while **MS School** shows extreme inequality between advantaged and disadvantaged students. | MS School needs to adopt GP's equity-focused policies. |
+| **4. ROI (Budget)** | **School Support (+0.65)** outperforms **Paid Tutoring (-0.23)**. Spending money on tutors without school support is a wasted investment. | **Stop** pushing paid tutoring as a standalone solution. Shift budget to internal school support. |
+| **5. Risk Algorithm** | Students with `3 failures` + `G1 Grade < 7` have a near-100% failure rate in the final exam. | Implement the SQL-based "Risk Score" to flag these students in Week 2 of the semester. |
 
 ---
 
-### 5. Early Warning System
-📁 `sql/05_early_warning_system.sql`
+## 🧠 Analyst Note: Why This Matters?
 
-> **Intervention Question:** How can we identify at-risk students early?
+The most surprising finding in this project was the **negative impact of paid tutoring** when isolated.
+Common sense suggests that "more tutoring = better grades." However, the data proves that for struggling students, paid classes might create a false sense of security. The real value comes from structured **School Educational Support**.
 
-| Risk Rank | Failures | Period 1 Grade | Final Grade | Pattern |
-|-----------|----------|----------------|-------------|---------|
-| 1-3 | 3 | 5 | 0, 0, 7 | Critical |
-| 4-7 | 3 | 6-7 | 0, 5, 8, 9 | High Risk |
-| 8-14 | 3 | 7-9 | 0, 7, 10 | At Risk |
-| 15-20 | 2 | 4-7 | 0, 4, 7, 8 | Monitor |
-
-**📌 Finding:** Students with **3 past failures combined with Period 1 grades below 7** have extremely high probability of final failure (many scoring 0). The risk formula `(failures × 5) + (20 - G1)` effectively identifies students needing immediate intervention. School average is 10.49, but top-risk students average well below 5.
-
-**🎯 Recommendation:** Implement automated flagging system in the first 2 weeks of semester. Students with 2+ past failures AND Period 1 grade below 8 should receive mandatory academic support.
+This insight alone could save the school administration significant budget and redirect it to where it actually works.
 
 ---
 
-## 🛠️ SQL Techniques Demonstrated
+## 📬 Connect
 
-| Technique | Where Used |
-|-----------|------------|
-| `CASE WHEN` | All queries - categorization |
-| `GROUP BY` + `HAVING` | Filtering meaningful groups |
-| `Aggregate Functions` | AVG, SUM, COUNT |
-| `Window Functions` | Query 5 - RANK(), PARTITION BY |
-| `CAST` | Decimal formatting |
-| `Subqueries/Filtering` | Query 4 - struggling students only |
-
----
-
-## 💡 Key Insights Summary
-
-| # | Insight | Impact |
-|---|---------|--------|
-| 1 | Parental education strongly predicts student success | Target first-generation students |
-| 2 | Females respond better to support programs | Expand support access |
-| 3 | GP school is more equitable than MS | Share best practices |
-| 4 | School support works; paid tutoring alone doesn't | Reallocate resources |
-| 5 | Past failures + low G1 = reliable risk predictor | Enable early intervention |
-
----
-
-## 🎓 Why This Analysis Matters
-
-As an Educational Management graduate, I bring **domain expertise** that transforms raw data into **actionable policy recommendations**:
-
-- Understanding **Bourdieu's Cultural Capital** theory to interpret achievement gaps
-- Recognizing that **equity metrics** matter as much as averages
-- Knowing that **ROI analysis** should focus on struggling students, not overall population
-- Designing **early warning systems** that administrators can actually implement
-
----
-
-## 📬 Contact
+If you found this analysis interesting or have questions about the SQL logic used, feel free to reach out.
 
 **Mohammad Yaqoobi**
-Data Analytics Student | Background in Educational Management
-
-[LinkedIn](https://www.linkedin.com/in/mohammad-yaqoobi/) • [Email](mailto:mohammad.yaqoobi143@gmail.com)
-
----
-
-*⭐ If you found this project valuable, please consider giving it a star!*
+Data Analyst | Educational Management Background
+[LinkedIn Profile](https://www.linkedin.com/in/mohammad-yaqoobi/)
