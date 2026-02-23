@@ -66,7 +66,7 @@ Using a **custom SQL risk formula**, this dashboard flags at-risk students *befo
 ### Data Source
 - **Dataset:** Student Performance (Math Course)
 - **Volume:** 395 records, 33 attributes
-- **Tools:** PostgreSQL, Power BI Desktop
+- **Tools:** MySQL, Power BI Desktop
 
 ### SQL Logic & Key Findings
 Five targeted SQL queries were written to extract actionable insights.  
