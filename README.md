@@ -20,7 +20,7 @@ I translated the raw SQL insights into a 4-page interactive report to help schoo
 
 ### 1. Executive Overview
 A high-level view of the school's health, showing performance distribution across gender and schools (GP vs. MS).
-![Overview Dashboard]([images/Overview.png])
+![Overview Dashboard]([https://github.com/MohammadYaqoobi/Student_Performance_Analysis_SQL/blob/main/images/Overview.png])
 
 ### 2. Equity Analysis (Cultural Capital)
 Here, I tested Bourdieu's theory. The data confirms a sharp divide: Students with higher-educated parents score **+2.0 points** higher on average.
