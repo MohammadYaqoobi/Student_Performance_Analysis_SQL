@@ -43,10 +43,10 @@ Students with higher-educated parents score **~2.0 points higher** on average.
 ---
 
 ### 3️⃣ ROI Analysis (Most Critical Finding)
-This analysis directly informs **budget allocation decisions**.
+This analysis focuses **only on struggling students** (those who started below passing: G1 < 10) and directly informs **budget allocation decisions**.
 
-- **Paid tutoring alone:** ❌ Ineffective (**–0.23 grade growth**)  
-- **Free school support:** ✅ Highest impact (**+0.65 grade growth**)
+- **Paid tutoring alone (for these students):** ❌ Ineffective (**–0.23 grade growth**)  
+- **Free school support (for the same group):** ✅ Highest impact (**+0.65 grade growth**)
 
 ![ROI Analysis](images/ROI.png)
 
@@ -77,8 +77,8 @@ Raw `.sql` files are available in the `sql/` directory.
 | **Cultural Capital** | Parental education is the strongest predictor (**~2-point gap**). | Launch mentorship programs for first-generation students. |
 | **Gender Gap** | Girls respond **+0.50 better** to school support programs. | Expand support capacity for female students. |
 | **School Equity** | GP School is consistent; MS School shows extreme inequality. | Replicate GP’s equity-focused policies in MS School. |
-| **ROI (Budget)** | School support (**+0.65**) vastly outperforms paid tutoring (**–0.23**). | Stop promoting paid tutoring as a standalone solution. |
-| **Risk Algorithm** | `3 failures + G1 < 7` → near-100% final failure rate. | Apply SQL risk scoring by Week 2 of the semester. |
+| **ROI (Budget)** | For students with **G1 < 10**, school support (**+0.65**) vastly outperforms paid tutoring alone (**–0.23**). | Stop promoting paid tutoring as a standalone solution; invest in school-based support. |
+| **Risk Algorithm** | `3 failures + G1 < 7` → very high final failure rate in this dataset. | Apply SQL risk scoring by Week 2 of the semester. |
 
 ---
 
