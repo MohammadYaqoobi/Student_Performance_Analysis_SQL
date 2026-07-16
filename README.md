@@ -33,7 +33,7 @@ A high-level snapshot of overall school performance, highlighting grade distribu
 ### 2️⃣ Equity Analysis (Cultural Capital)
 This page tests **Bourdieu’s Cultural Capital theory**.
 
-The data confirms a strong inequality pattern:  
+The data shows an observed difference in average final grades across parental-education groups.  
 Students with higher-educated parents score **~2.0 points higher** on average.
 
 *(Groups with statistically insignificant sample sizes were excluded for accuracy.)*
@@ -45,8 +45,8 @@ Students with higher-educated parents score **~2.0 points higher** on average.
 ### 3️⃣ ROI Analysis (Most Critical Finding)
 This analysis focuses **only on struggling students** (those who started below passing: G1 < 10) and directly informs **budget allocation decisions**.
 
-- **Paid tutoring alone (for these students):** ❌ Ineffective (**–0.23 grade growth**)  
-- **Free school support (for the same group):** ✅ Highest impact (**+0.65 grade growth**)
+- Students receiving **paid tutoring** alone showed lower average grade growth in this dataset.  
+- Students receiving **school support** showed the highest average grade growth among the compared support groups.
 
 ![ROI Analysis](images/ROI.png)
 
@@ -74,7 +74,7 @@ Raw `.sql` files are available in the `sql/` directory.
 
 | Analysis | Key Insight | Recommendation |
 |--------|------------|----------------|
-| **Cultural Capital** | Parental education is the strongest predictor (**~2-point gap**). | Launch mentorship programs for first-generation students. |
+| **Cultural Capital** | Parental education showed one of the largest observed group differences in this analysis. (**~2-point gap**). | Launch mentorship programs for first-generation students. |
 | **Gender Gap** | Girls respond **+0.50 better** to school support programs. | Expand support capacity for female students. |
 | **School Equity** | GP School is consistent; MS School shows extreme inequality. | Replicate GP’s equity-focused policies in MS School. |
 | **ROI (Budget)** | For students with **G1 < 10**, school support (**+0.65**) vastly outperforms paid tutoring alone (**–0.23**). | Stop promoting paid tutoring as a standalone solution; invest in school-based support. |
